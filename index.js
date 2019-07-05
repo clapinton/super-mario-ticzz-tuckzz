@@ -25,7 +25,15 @@ function paintTime(hour, minute, second, epoch) {
 	document.getElementById('epoch-time').innerText = second;
 }
 
-function jump() {
+function nudgeBrick(brick) {
+	const brickElement = document.getElementById(brick);
+		brickElement.classList.add('nudge-brick');
+		setTimeout(() => {
+			brickElement.classList.remove('nudge-brick')
+	}, 250);
+}
+
+function jump(hour, minute) {
 	// It takes 300ms to jump and 300ms to fall,
 	// so wait 700ms before actually starting the jump
 	setTimeout(() => {
@@ -34,6 +42,12 @@ function jump() {
 			.getElementsByTagName('img')[0]
 			.setAttribute('src', 'images/smb1-mario-jump-sprite.png');
 			marioElement.classList.add('jump');
+			setTimeout(() => {
+				nudgeBrick('minute');
+				if (minute === 42) {
+					nudgeBrick('hour');
+				}
+			}, 300);
 			setTimeout(() => {
 			marioElement
 				.getElementsByTagName('img')[0]
@@ -47,7 +61,7 @@ function startMarioBuzz() {
 	const { hour, minute, second, epoch } = getTime();
 	paintTime(hour, minute, second, epoch);
 	if (second === 59) {
-		jump();
+		jump(hour, minute);
 	}
 	setTimeout(startMarioBuzz, 1000)
 }

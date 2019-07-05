@@ -27,7 +27,7 @@ body {
 	display: flex;
 }
 
-.blocks .hour, .blocks .minute {
+.blocks #hour, .blocks #minute {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -49,6 +49,19 @@ body {
 @keyframes jump {
 	0% { transform: translateY(0) }
 	100% { transform: translateY(-110px) }
+}
+
+.nudge-brick {
+	animation-name: nudge-brick;
+	animation-duration: 125ms;
+	animation-timing-function: linear;
+	animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+
+@keyframes nudge-brick {
+	0% { transform: translateY(0) }
+	100% { transform: translateY(-55px) }
 }
 
 .smb1 .blocks span {
