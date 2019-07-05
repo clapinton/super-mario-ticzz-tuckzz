@@ -1,0 +1,77 @@
+body {
+	margin: 0;
+	background: #a1adff;
+	font-family: 'Press Start 2P', cursive;
+}
+
+.background-image img {
+	width: 100%;
+	/* max-width: 100vw; */
+	position: absolute;
+	bottom: 0;
+	z-index: -1;
+}
+
+.top .epoch {
+	color: white;
+	margin: 30px 60px;
+	text-align: right;
+	font-size: calc(0.013 * 100vw);
+}
+
+#epoch-time {
+	margin-top: 5px;
+}
+
+.blocks {
+	display: flex;
+}
+
+.blocks .hour, .blocks .minute {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.blocks span {
+	position: absolute;
+	font-size: calc(0.035 * 100vw);
+}
+
+.jump {
+	animation-name: jump;
+	animation-duration: 300ms;
+	animation-timing-function: linear;
+	animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+
+@keyframes jump {
+	0% { transform: translateY(0) }
+	100% { transform: translateY(-110px) }
+}
+
+.smb1 .blocks span {
+	color: #DA5B24;
+	text-shadow: black calc(0.004 * 100vw) calc(0.004 * 100vw);
+}
+
+.smb1 #mario {
+	position: absolute;
+	bottom: calc(0.08 * 100vw);
+	left: 50%;
+}
+
+.smb1 #mario img {
+	height: calc(0.045 * 100vw);
+}
+
+.smb1 .blocks {
+	position: absolute;
+	bottom: calc(0.2 * 100vw);
+	left: 42%;
+}
+
+.smb1 .blocks img {
+	height: calc(0.1 * 100vw);
+}
