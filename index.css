@@ -62,13 +62,13 @@ body {
 
 #mario {
 	position: absolute;
-	bottom: calc(0.082 * 100vw);
+	/* bottom: calc(0.082 * 100vw); */
 	left: 50%;
 }
 
 .jump {
 	animation-name: jump;
-	animation-duration: 300ms;
+	animation-duration: 400ms;
 	animation-timing-function: linear;
 	animation-iteration-count: 2;
   animation-direction: alternate;
@@ -79,24 +79,37 @@ body {
 	100% { transform: translateY(-110px) }
 }
 
-.nudge-brick {
-	animation-name: nudge-brick;
+.brick-nudge {
+	animation-name: brick-nudge;
 	animation-duration: 125ms;
 	animation-timing-function: linear;
 	animation-iteration-count: 2;
   animation-direction: alternate;
 }
 
-@keyframes nudge-brick {
+@keyframes brick-nudge {
 	0% { transform: translateY(0) }
 	100% { transform: translateY(-55px) }
 }
 
 #goomba {
-	height: 450px;
 	background-repeat: no-repeat;
 	background-size: 50px;
+	position: absolute;
+	right: -8vw;
 }
+
+.goomba-walk {
+	animation-name: goomba-walk;
+	animation-duration: 7700ms;
+	animation-timing-function: linear;
+}
+
+@keyframes goomba-walk {
+	0% { transform: translateX(0) }
+	100% { transform: translateX(-105vw) }
+}
+
 
 /* SMB 1 */
 
@@ -127,5 +140,8 @@ body {
 }
 
 .smb1 #goomba {
+	height: calc(0.035 * 100vw);
+	width: calc(0.035 * 100vw);
 	background-image: url('images/smb1-goomba.gif');
+	bottom: calc(0.082 * 100vw);
 }

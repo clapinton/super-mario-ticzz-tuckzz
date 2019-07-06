@@ -30,9 +30,9 @@ function paintTime(date, hour, minute, second, epoch) {
 
 function nudgeBrick(brick) {
 	const brickElement = document.getElementById(brick);
-		brickElement.classList.add('nudge-brick');
+		brickElement.classList.add('brick-nudge');
 		setTimeout(() => {
-			brickElement.classList.remove('nudge-brick')
+			brickElement.classList.remove('brick-nudge')
 	}, 250);
 }
 
@@ -49,19 +49,28 @@ function jump(hour, minute) {
 			if (minute === 59) {
 				nudgeBrick('hour');
 			}
-		}, 300);
+		}, 400);
 		setTimeout(() => {
 			marioElement
 				.setAttribute('style', 'background-image: url("images/smb1-mario-sprite.png")');
 			marioElement.classList.remove('jump')
-		}, 600);
-	}, 700)
+		}, 800);
+	}, 600)
+}
+
+function showGoomba() {
+	const goombaElement = document.getElementById('goomba');
+	goombaElement.classList.add('goomba-walk');
+	setTimeout(() => goombaElement.classList.remove('goomba-walk'), 16000)
 }
 
 function startMarioBuzz() {
 	const { date, hour, minute, second, epoch } = getTime();
 	paintTime(date, hour, minute, second, epoch);
-	if (second === 59) {
+	if (second === 26) {
+		showGoomba();
+	}
+	if (second === 29) {
 		jump(hour, minute);
 	}
 	setTimeout(startMarioBuzz, 1000)
