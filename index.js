@@ -39,19 +39,17 @@ function jump(hour, minute) {
 	setTimeout(() => {
 		const marioElement = document.getElementById('mario');
 		marioElement
-			.getElementsByTagName('img')[0]
-			.setAttribute('src', 'images/smb1-mario-jump-sprite.png');
-			marioElement.classList.add('jump');
-			setTimeout(() => {
-				nudgeBrick('minute');
-				if (minute === 42) {
-					nudgeBrick('hour');
-				}
-			}, 300);
-			setTimeout(() => {
+			.setAttribute('style', 'background-image: url("images/smb1-mario-jump-sprite.png")');
+		marioElement.classList.add('jump');
+		setTimeout(() => {
+			nudgeBrick('minute');
+			if (minute === 42) {
+				nudgeBrick('hour');
+			}
+		}, 300);
+		setTimeout(() => {
 			marioElement
-				.getElementsByTagName('img')[0]
-				.setAttribute('src', 'images/smb1-mario-sprite.png');
+				.setAttribute('style', 'background-image: url("images/smb1-mario-sprite.png")');
 			marioElement.classList.remove('jump')
 		}, 600);
 	}, 700)

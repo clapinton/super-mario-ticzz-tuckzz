@@ -40,6 +40,12 @@ body {
 	font-size: calc(0.035 * 100vw);
 }
 
+#mario {
+	position: absolute;
+	bottom: calc(0.082 * 100vw);
+	left: 50%;
+}
+
 .jump {
 	animation-name: jump;
 	animation-duration: 300ms;
@@ -69,7 +75,7 @@ body {
 /* SMB 1 */
 
 .smb1 .background-image {
-	background-image: url(images/smb1-background.jpg);
+	background-image: url('images/smb1-background.jpg');
 }
 
 .smb1 .blocks span {
@@ -78,9 +84,12 @@ body {
 }
 
 .smb1 #mario {
-	position: absolute;
-	bottom: calc(0.08 * 100vw);
-	left: 50%;
+	bottom: calc(0.082 * 100vw);
+	background-image: url(images/smb1-mario-sprite.png);
+	background-size: auto calc(0.045 * 100vw);
+	background-repeat: no-repeat;
+	width: calc(0.045 * 100vw);
+	height: calc(0.045 * 100vw);
 }
 
 .smb1 #mario img {
