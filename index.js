@@ -43,7 +43,7 @@ function jump(hour, minute) {
 		marioElement.classList.add('jump');
 		setTimeout(() => {
 			nudgeBrick('minute');
-			if (minute === 42) {
+			if (minute === 59) {
 				nudgeBrick('hour');
 			}
 		}, 300);

@@ -27,12 +27,19 @@ body {
 
 .blocks {
 	display: flex;
+	height: calc(0.085 * 100vw);
+	position: absolute;
+	bottom: calc(0.2 * 100vw);
+	left: 43%;
 }
 
 .blocks #hour, .blocks #minute {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-size: auto calc(0.085 * 100vw);
+	background-repeat: no-repeat;
+	width: calc(0.084 * 100vw);
 }
 
 .blocks span {
@@ -96,12 +103,6 @@ body {
 	height: calc(0.045 * 100vw);
 }
 
-.smb1 .blocks {
-	position: absolute;
-	bottom: calc(0.2 * 100vw);
-	left: 42%;
-}
-
-.smb1 .blocks img {
-	height: calc(0.1 * 100vw);
+.blocks #hour, .blocks #minute {
+	background-image: url('images/smb1-bock-sprite.png');
 }
