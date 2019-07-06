@@ -1,14 +1,15 @@
 function getTime() {
 	const dateNow = new Date();
+	const date = dateNow.toDateString();
 	const hour = dateNow.getHours();
 	const minute = dateNow.getMinutes();
 	const second = dateNow.getSeconds();
 	const epoch = dateNow.getTime();
 
-	return { hour, minute, second, epoch };
+	return { date, hour, minute, second, epoch };
 }
 
-function paintTime(hour, minute, second, epoch) {
+function paintTime(date, hour, minute, second, epoch) {
 	let hourToUse = hour;
 	if (hour < 10) {
 		hourToUse = `0${hour}`;
@@ -20,9 +21,11 @@ function paintTime(hour, minute, second, epoch) {
 	}
 
 	const epochToUse = Math.floor(epoch / 1000);
-	document.getElementById('hour-text').innerText = hourToUse;
-	document.getElementById('minute-text').innerText = minuteToUse;
-	document.getElementById('epoch-time').innerText = second;
+	document.getElementById('date-content').innerText = date;
+	document.getElementById('hour-content').innerText = hourToUse;
+	document.getElementById('minute-content').innerText = minuteToUse;
+	document.getElementById('seconds-content').innerText = second;
+	document.getElementById('epoch-content').innerText = epochToUse;
 }
 
 function nudgeBrick(brick) {
@@ -56,8 +59,8 @@ function jump(hour, minute) {
 }
 
 function startMarioBuzz() {
-	const { hour, minute, second, epoch } = getTime();
-	paintTime(hour, minute, second, epoch);
+	const { date, hour, minute, second, epoch } = getTime();
+	paintTime(date, hour, minute, second, epoch);
 	if (second === 59) {
 		jump(hour, minute);
 	}

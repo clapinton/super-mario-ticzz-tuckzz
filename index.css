@@ -12,17 +12,30 @@ body {
 	height: 100vh;
 	position: absolute;
 	bottom: 0;
+	z-index: -1;
 }
 
-.top .epoch {
+.top {
+	display: flex;
+	justify-content: space-between;
 	color: white;
+}
+
+.top * {
+	margin-top: 5px;
+}
+
+.top .epoch, .top .date, .top .seconds {
 	margin: 30px 60px;
-	text-align: right;
 	font-size: calc(0.013 * 100vw);
 }
 
-#epoch-time {
-	margin-top: 5px;
+.top .date {
+	text-align: center;
+}
+
+.top .seconds {
+	text-align: right;
 }
 
 .blocks {
@@ -79,6 +92,12 @@ body {
 	100% { transform: translateY(-55px) }
 }
 
+#goomba {
+	height: 450px;
+	background-repeat: no-repeat;
+	background-size: 50px;
+}
+
 /* SMB 1 */
 
 .smb1 .background-image {
@@ -103,6 +122,10 @@ body {
 	height: calc(0.045 * 100vw);
 }
 
-.blocks #hour, .blocks #minute {
+.smb1 .blocks #hour, .smb1 .blocks #minute {
 	background-image: url('images/smb1-bock-sprite.png');
+}
+
+.smb1 #goomba {
+	background-image: url('images/smb1-goomba.gif');
 }
