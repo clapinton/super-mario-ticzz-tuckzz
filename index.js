@@ -67,10 +67,10 @@ function showGoomba() {
 function startMarioBuzz() {
 	const { date, hour, minute, second, epoch } = getTime();
 	paintTime(date, hour, minute, second, epoch);
-	if (second === 26) {
+	if (second === 56) {
 		showGoomba();
 	}
-	if (second === 29) {
+	if (second === 59) {
 		jump(hour, minute);
 	}
 	setTimeout(startMarioBuzz, 1000)
