@@ -1,6 +1,5 @@
 body {
 	margin: 0;
-	background: #a1adff;
 	font-family: 'Press Start 2P', cursive;
 }
 
@@ -113,6 +112,10 @@ body {
 
 /* SMB 1 */
 
+.smb1 {
+	background: #a1adff;
+}
+
 .smb1 .background-image {
 	background-image: url('images/smb1-background.jpg');
 }
@@ -140,6 +143,46 @@ body {
 }
 
 .smb1 #goomba {
+	height: calc(0.035 * 100vw);
+	width: calc(0.035 * 100vw);
+	background-image: url('images/smb1-goomba.gif');
+	bottom: calc(0.082 * 100vw);
+}
+
+
+/* SMB 3 */
+
+.smb3 {
+	background: #a8fef0;
+}
+
+.smb3 .background-image {
+	background-image: url('images/smb3-background.jpg');
+}
+
+.smb3 .blocks span {
+	color: #DA5B24;
+	text-shadow: black calc(0.004 * 100vw) calc(0.004 * 100vw);
+}
+
+.smb3 #mario {
+	bottom: calc(0.082 * 100vw);
+	background-image: url(images/smb1-mario-sprite.png);
+	background-size: auto calc(0.045 * 100vw);
+	background-repeat: no-repeat;
+	width: calc(0.045 * 100vw);
+	height: calc(0.045 * 100vw);
+}
+
+.smb3 #mario img {
+	height: calc(0.045 * 100vw);
+}
+
+.smb3 .blocks #hour, .smb3 .blocks #minute {
+	background-image: url('images/smb1-bock-sprite.png');
+}
+
+.smb3 #goomba {
 	height: calc(0.035 * 100vw);
 	width: calc(0.035 * 100vw);
 	background-image: url('images/smb1-goomba.gif');

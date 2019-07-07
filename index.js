@@ -1,3 +1,24 @@
+const SMB_THEMES = {
+	smb1: 'smb1',
+	smb3: 'smb3'
+};
+
+// Start on smb1
+let activeTheme = SMB_THEMES.smb1;
+
+const JUMP_DURATION = 400;
+const JUMP_DELAY = 1000 - JUMP_DURATION;
+
+function changeTheme(theme) {
+	// Wait for the jump up and only change it once we hit the block
+	setTimeout(() => {
+		const wrapperElement = document.getElementsByClassName('wrapper')[0];
+		wrapperElement.className = '';
+		wrapperElement.classList.add('wrapper', theme);
+		activeTheme = theme;
+	}, 1000);
+}
+
 function getTime() {
 	const dateNow = new Date();
 	const date = dateNow.toDateString();
@@ -37,8 +58,8 @@ function nudgeBrick(brick) {
 }
 
 function jump(hour, minute) {
-	// It takes 300ms to jump and 300ms to fall,
-	// so wait 700ms before actually starting the jump
+	// It takes 400ms to jump and 400ms to fall,
+	// so wait 600ms before actually starting the jump
 	setTimeout(() => {
 		const marioElement = document.getElementById('mario');
 		marioElement
@@ -49,19 +70,31 @@ function jump(hour, minute) {
 			if (minute === 59) {
 				nudgeBrick('hour');
 			}
-		}, 400);
+		}, JUMP_DURATION);
 		setTimeout(() => {
 			marioElement
 				.setAttribute('style', 'background-image: url("images/smb1-mario-sprite.png")');
 			marioElement.classList.remove('jump')
 		}, 800);
-	}, 600)
+	}, JUMP_DELAY)
 }
 
 function showGoomba() {
 	const goombaElement = document.getElementById('goomba');
 	goombaElement.classList.add('goomba-walk');
 	setTimeout(() => goombaElement.classList.remove('goomba-walk'), 16000)
+}
+
+function checkTheme(minute) {
+	if (minute % 2 === 0) {
+		changeTheme(SMB_THEMES.smb3);
+		return;
+	}
+
+	// Else, if the active theme is not smb1 already, change it
+	if (activeTheme !== SMB_THEMES.smb1) {
+		changeTheme(SMB_THEMES.smb1);
+	}
 }
 
 function startMarioBuzz() {
@@ -72,8 +105,14 @@ function startMarioBuzz() {
 	}
 	if (second === 59) {
 		jump(hour, minute);
+		// Check if we should change the theme for the next minute
+		checkTheme(minute + 1);
 	}
 	setTimeout(startMarioBuzz, 1000)
 }
+
+// Check which theme to start with
+const { date, hour, minute, second, epoch } = getTime();
+checkTheme(minute);
 
 startMarioBuzz();
