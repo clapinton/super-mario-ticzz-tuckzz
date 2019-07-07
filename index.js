@@ -62,8 +62,6 @@ function jump(hour, minute) {
 	// so wait 600ms before actually starting the jump
 	setTimeout(() => {
 		const marioElement = document.getElementById('mario');
-		marioElement
-			.setAttribute('style', 'background-image: url("images/smb1-mario-jump-sprite.png")');
 		marioElement.classList.add('jump');
 		setTimeout(() => {
 			nudgeBrick('minute');
@@ -72,10 +70,8 @@ function jump(hour, minute) {
 			}
 		}, JUMP_DURATION);
 		setTimeout(() => {
-			marioElement
-				.setAttribute('style', 'background-image: url("images/smb1-mario-sprite.png")');
 			marioElement.classList.remove('jump')
-		}, 800);
+		}, JUMP_DURATION * 2);
 	}, JUMP_DELAY)
 }
 
@@ -86,7 +82,7 @@ function showGoomba() {
 }
 
 function checkTheme(minute) {
-	if (minute % 2 === 0) {
+	if (minute % 3 === 0) {
 		changeTheme(SMB_THEMES.smb3);
 		return;
 	}

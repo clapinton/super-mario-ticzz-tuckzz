@@ -113,7 +113,7 @@ body {
 /* SMB 1 */
 
 .smb1 {
-	background: #a1adff;
+	background-color: #a1adff;
 }
 
 .smb1 .background-image {
@@ -127,11 +127,15 @@ body {
 
 .smb1 #mario {
 	bottom: calc(0.082 * 100vw);
-	background-image: url(images/smb1-mario-sprite.png);
+	background-image: url('images/sprites/smb1/mario.png');
 	background-size: auto calc(0.045 * 100vw);
 	background-repeat: no-repeat;
 	width: calc(0.045 * 100vw);
 	height: calc(0.045 * 100vw);
+}
+
+.smb1 #mario.jump {
+	background-image: url('images/sprites/smb1/mario-jump.png');
 }
 
 .smb1 #mario img {
@@ -139,13 +143,13 @@ body {
 }
 
 .smb1 .blocks #hour, .smb1 .blocks #minute {
-	background-image: url('images/smb1-bock-sprite.png');
+	background-image: url('images/sprites/smb1/block.png');
 }
 
 .smb1 #goomba {
 	height: calc(0.035 * 100vw);
 	width: calc(0.035 * 100vw);
-	background-image: url('images/smb1-goomba.gif');
+	background-image: url('images/sprites/smb1/goomba.gif');
 	bottom: calc(0.082 * 100vw);
 }
 
@@ -153,7 +157,7 @@ body {
 /* SMB 3 */
 
 .smb3 {
-	background: #a8fef0;
+	background-color: #a8fef0;
 }
 
 .smb3 .background-image {
@@ -167,11 +171,15 @@ body {
 
 .smb3 #mario {
 	bottom: calc(0.082 * 100vw);
-	background-image: url(images/smb1-mario-sprite.png);
+	background-image: url('images/sprites/smb3/mario.png');
 	background-size: auto calc(0.045 * 100vw);
 	background-repeat: no-repeat;
 	width: calc(0.045 * 100vw);
 	height: calc(0.045 * 100vw);
+}
+
+.smb3 #mario.jump {
+	background-image: url('images/sprites/smb3/mario-jump.png');
 }
 
 .smb3 #mario img {
@@ -179,12 +187,12 @@ body {
 }
 
 .smb3 .blocks #hour, .smb3 .blocks #minute {
-	background-image: url('images/smb1-bock-sprite.png');
+	background-image: url('images/sprites/smb3/block.png');
 }
 
 .smb3 #goomba {
 	height: calc(0.035 * 100vw);
 	width: calc(0.035 * 100vw);
-	background-image: url('images/smb1-goomba.gif');
+	background-image: url('images/sprites/smb3/goomba.gif');
 	bottom: calc(0.082 * 100vw);
 }
