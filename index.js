@@ -83,8 +83,6 @@ function showGoomba() {
 }
 
 function checkTheme(minute) {
-	// changeTheme(SMB_THEMES.smb5);
-	// return;
 	if (minute % 5 === 0) {
 		changeTheme(SMB_THEMES.smb5);
 		return;
