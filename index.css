@@ -78,7 +78,7 @@ body {
 
 @keyframes jump {
 	0% { transform: translateY(0) }
-	100% { transform: translateY(-110px) }
+	100% { transform: translateY(calc(-0.075 * 100vw)) }
 }
 
 .brick-nudge {
@@ -91,7 +91,7 @@ body {
 
 @keyframes brick-nudge {
 	0% { transform: translateY(0) }
-	100% { transform: translateY(-55px) }
+	100% { transform: translateY(calc(-0.03 * 100vw)) }
 }
 
 #goomba {
