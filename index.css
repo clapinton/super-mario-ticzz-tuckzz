@@ -96,7 +96,7 @@ body {
 
 #goomba {
 	background-repeat: no-repeat;
-	background-size: 50px;
+	background-size: calc(0.035 * 100vw);
 	position: absolute;
 	right: -8vw;
 }
