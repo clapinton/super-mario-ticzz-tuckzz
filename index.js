@@ -1,10 +1,11 @@
 const SMB_THEMES = {
 	smb1: 'smb1',
-	smb3: 'smb3'
+	smb3: 'smb3',
+	smb5: 'smb5'
 };
 
 // Start on smb1
-let activeTheme = SMB_THEMES.smb1;
+let activeTheme = '';
 
 const JUMP_DURATION = 400;
 const JUMP_DELAY = 1000 - JUMP_DURATION;
@@ -82,6 +83,13 @@ function showGoomba() {
 }
 
 function checkTheme(minute) {
+	// changeTheme(SMB_THEMES.smb5);
+	// return;
+	if (minute % 5 === 0) {
+		changeTheme(SMB_THEMES.smb5);
+		return;
+	}
+
 	if (minute % 3 === 0) {
 		changeTheme(SMB_THEMES.smb3);
 		return;
