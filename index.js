@@ -4,7 +4,7 @@ const SMB_THEMES = {
 	smb5: 'smb5'
 };
 
-// Start on smb1
+// Start empty
 let activeTheme = '';
 
 const JUMP_DURATION = 400;
