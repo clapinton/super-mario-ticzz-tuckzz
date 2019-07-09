@@ -215,7 +215,6 @@ body {
 	text-shadow: none;
 	-webkit-text-stroke-width: calc(0.0025 * 100vw);
 	-webkit-text-stroke-color: black;
-	/* font-size: calc(0.033 * 100vw); */
 }
 
 .smb5 #mario {
