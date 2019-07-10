@@ -21,7 +21,7 @@ Basically, it's a fizz-buzz where if the minute is:
 ![Super Mario Bros theme](/images/README/smb1.jpg)
 
 
-Cool cool. But what about 15? Well, I still don't know what to do on that one. Ideally I'd want it to render Super Mario 64 graphics, but it's really hard to get transparent assets out there, and it'd be even harder to record the game myself and remove the background. Remember: Mario on 1, 3 and World didn't have much movement while he was stopped, the camera was mostly fixed and removing the background was much easier because pixels. Anyway, maybe someday I'll manage to do that.
+Cool cool. But what about 15? Well, I still don't know what to do on that one, so for now, it renders the Super Mario World theme (5 takes precedence over 3). Ideally I'd want it to render Super Mario 64 graphics, but it's really hard to get transparent assets out there, and it'd be even harder to record the game myself and remove the background. Remember: Mario on 1, 3 and World didn't have much movement while he was stopped, the camera was mostly fixed and removing the background was much easier because pixels. Anyway, maybe someday I'll manage to do that.
 
 When the minute changes, Mario jumps and hits the block (on a full hour, both blocks are hit). I also doomed a goomba into eternal suffering by spawning it a couple of seconds before the jump. It shall never hit our hero.
 
@@ -29,7 +29,7 @@ It also shows you the date, seconds and epoch time at the top. Because I like ep
 
 ## tech stuff if you wanna know
 
-It uses all vanilla HTML/CSS/JS (no frameworks/libs), since it's super simple.
+It all uses vanilla HTML/CSS/JS (no frameworks/libs), since it's super simple.
 
 There's a `<div class=wrapper>` near the top which, you guessed it, wraps all of the components you see on screen. All the JS logic does is add/remove one class on that div (one of `.smb1`, `.smb3` or `.smb5`). All elements below that have their own classes, with their own `background-image`s, so by assigning `.smb1` class, every background image comes from `images/smb1/`. This allowed me to switch themes halfway through an animation w/o much work.
 
