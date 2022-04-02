@@ -79,7 +79,7 @@ function jump(hour, minute) {
 function showGoomba() {
 	const goombaElement = document.getElementById('goomba');
 	goombaElement.classList.add('goomba-walk');
-	setTimeout(() => goombaElement.classList.remove('goomba-walk'), 16000)
+	setTimeout(() => goombaElement.classList.remove('goomba-walk'), 7700)
 }
 
 function checkTheme(minute) {
