@@ -1,7 +1,7 @@
 # It's Fizz Buzz.
 # But with Super Mario.
 # And it's a clock.
-# Plus it's live at http://super-mario-ticzz-tuckzz.clapinton.com/
+# Plus it's live at http://super-mario-ticzz-tuckzz.olivetree.dev/
 
 I had this idea about a Mario-themed screensaver a while ago, but never sat down to actually build it. Finally found some time and this is the result. Instead of building a full screen saver, I built a web page and then used https://github.com/liquidx/webviewscreensaver
 
